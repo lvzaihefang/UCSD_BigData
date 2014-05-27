@@ -13,6 +13,7 @@ class MRWeather(MRJob):
                 yield (('header',1), 1)
             else:
                 if elements[1] == 'TMIN':
+                    print "TMIN"
                     num_defined = sum([e!='' for e in elements[3:]])
                     yield (('TMIN', num_defined), 1)
                 elif elements[1] == 'TMAX':
