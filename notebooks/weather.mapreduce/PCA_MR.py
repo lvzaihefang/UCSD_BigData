@@ -66,7 +66,7 @@ class MRWeather(MRJob):
                     eigenvector_requried = i+1
                     break            
                    
-            yield key, eigenvector_requried
+            yield key, (rows, eigenvector_requried)
             
         except Exception, e:
             self.increment_counter('MrJob Counters','reducer-error',1)
